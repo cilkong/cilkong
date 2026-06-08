@@ -22,7 +22,6 @@ background-size:cover;
 background-position:center;
 background-attachment:fixed;
 color:white;
-}
 font-family:Arial, sans-serif;
 overflow-x:hidden;
 }
@@ -226,7 +225,41 @@ color:#aaa;
 }
 
 @media(max-width:900px){
+.coin-container{
+    perspective:1000px;
+    display:flex;
+    justify-content:center;
+}
 
+.coin{
+    position:relative;
+    width:550px;
+    height:550px;
+    transform-style:preserve-3d;
+    animation:spinCoin 8s linear infinite;
+}
+
+.coin img{
+    position:absolute;
+    width:100%;
+    height:100%;
+    object-fit:contain;
+    backface-visibility:hidden;
+}
+
+.back{
+    transform:rotateY(180deg);
+}
+
+@keyframes spinCoin{
+    from{
+        transform:rotateY(0deg);
+    }
+    to{
+        transform:rotateY(360deg);
+    }
+}
+  </style>
 .hero{
 grid-template-columns:1fr;
 text-align:center;
@@ -321,10 +354,19 @@ FOLLOW X
 
 <div class="hero-image">
 
-<img src="astronaut1.png">
+    <div class="coin-container">
+
+        <div class="coin">
+
+            <img src="astronaut1.png" class="front">
+
+            <img src="astronaut1.png" class="back">
+
+        </div>
+
+    </div>
 
 </div>
-
 
 </section>
 
