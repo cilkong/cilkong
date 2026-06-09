@@ -294,8 +294,31 @@ grid-template-columns:1fr;
 grid-template-columns:1fr;
 }
 
+.menu-toggle{
+    display:block;
+}
+
 nav{
-display:none;
+    display:none;
+    position:absolute;
+    top:90px;
+    left:5%;
+    width:90%;
+    background:#07101f;
+    border:1px solid #1b2a44;
+    border-radius:15px;
+    flex-direction:column;
+    padding:20px;
+    gap:20px;
+    z-index:1000;
+}
+
+nav.active{
+    display:flex;
+}
+
+header{
+    position:relative;
 }
 
 .hero h1{
@@ -332,14 +355,25 @@ font-size:48px;
 <h2>CILKONG</h2>
 </div>
 
-<nav>
+<div class="menu-toggle" id="menuToggle" onclick="toggleMenu()">
+☰
+</div>
+
+<nav id="mobileMenu">
 <a href="#about">ABOUT</a>
 <a href="#nft">NFT COLLECTIONS</a>
 <a href="#tokenomics">TOKENOMICS</a>
 <a href="#community">COMMUNITY</a>
 <a href="#faq">FAQ</a>
 </nav>
-
+.menu-toggle{
+    display:none;
+    font-size:32px;
+    cursor:pointer;
+    color:#ffd52e;
+    transition:0.3s;
+    user-select:none;
+}
 <a href="#" class="telegram-btn">
 JOIN TELEGRAM
 </a>
@@ -571,5 +605,20 @@ Everything else is a bonus.
 <footer>
 Started as a meme. Everything else is a bonus.
 </footer>
+<script>
+<script>
+function toggleMenu() {
+    const menu = document.getElementById("mobileMenu");
+    const toggle = document.getElementById("menuToggle");
+
+    menu.classList.toggle("active");
+
+    if (menu.classList.contains("active")) {
+        toggle.innerHTML = "✕";
+    } else {
+        toggle.innerHTML = "☰";
+    }
+}
+</script>
 </body>
 </html>
