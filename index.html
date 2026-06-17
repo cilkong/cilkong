@@ -88,8 +88,6 @@ font-weight:bold;
 }
 
 .hero{
-    div:first-child
-    margin-top:-120px;
     display:grid;
     grid-template-columns:1fr 1fr;
     align-items:center;
@@ -97,13 +95,18 @@ font-weight:bold;
     min-height:calc(100vh - 100px);
 }
 
+.hero > div:first-child{
+    margin-top:-120px;
+}
+
 .hero h1{
-    font-size:72px;
+    font-size:56px;
     margin-bottom:20px;
+    color:#ffd52e;
 }
 
 .hero h3{
-    font-size:14px;
+    font-size:18px;
     line-height:1.8;
     margin-bottom:25px;
 }
@@ -141,9 +144,8 @@ color:black;
 
 .hero-image{
     position:relative;
-    width:600px;
+    width:500px;
     height:500px;
-    margin:auto;
 }
 .faq-mini{
     position:absolute;
