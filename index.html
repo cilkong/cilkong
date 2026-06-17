@@ -121,6 +121,11 @@ display:flex;
 gap:20px;
 flex-wrap:wrap;
 }
+    .supply-box{
+margin-top:20px;
+font-size:13px;
+color:#ffd52e;
+}
 
 .btn{
 padding:14px 22px;
@@ -136,9 +141,28 @@ color:black;
 }
 
 .hero-image{
+position:relative;
 text-align:center;
 }
 
+.faq-mini{
+position:absolute;
+right:0;
+bottom:20px;
+width:220px;
+background:rgba(10,20,40,.85);
+border:1px solid #1b2a44;
+padding:15px;
+border-radius:12px;
+font-size:12px;
+text-align:left;
+}
+
+.faq-mini h4{
+color:#ffd52e;
+margin-bottom:10px;
+font-size:14px;
+}
 .hero-image > img{
     width:100%;
     max-width:550px;
@@ -432,6 +456,7 @@ FOLLOW X
 </div>
 
 <div class="hero-image">
+    
 
     <div class="coin-container">
 
@@ -441,7 +466,12 @@ FOLLOW X
 
             <img src="astronaut1.png" class="back">
 
-        </div>
+        </div><div class="faq-mini">
+<h4>FAQ</h4>
+<p>Moon? Nobody knows.</p>
+<p>Roadmap? Not really.</p>
+<p>Games? Maybe.</p>
+</div>        
 
     </div>
 
