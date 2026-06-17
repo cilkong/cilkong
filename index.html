@@ -235,14 +235,16 @@ justify-content:space-between;
 padding:12px 0;
 border-bottom:1px solid #222;
 }
-.token-info{
-    margin-top:20px;
-    display:inline-block;
-    background:rgba(0,0,0,.3);
-    border:1px solid rgba(255,255,255,.1);
-    padding:12px 18px;
-    border-radius:12px;
-    color:#ffd52e;
+.token-info div{
+    display:grid;
+    grid-template-columns:25px 60px 10px auto;
+    align-items:center;
+    gap:4px;
+    margin:6px 0;
+}
+
+.icon{
+    text-align:center;
 }
 
 .token-info div{
@@ -417,13 +419,12 @@ font-size:48px;
 .hero-buttons{
     justify-content:center;
 }
-
- .token-info div{
-        display:flex;
-        justify-content:center;
+    .token-info div{
+        display:grid;
+        grid-template-columns:60px 10px auto;
         gap:4px;
+        justify-content:center;
     }
-
 footer{
     top:0;
     margin-top:40px;
@@ -490,13 +491,15 @@ Built for fun, community and good vibes only.
 <div class="token-info">
 
     <div>
-        <span>🚀 Supply</span>
+        <span class="icon">🚀</span>
+        <span>Supply</span>
         <span>:</span>
         <span>980,000,000 $CLK</span>
     </div>
 
     <div>
-        <span>⛓ Chain</span>
+        <span class="icon">⛓</span>
+        <span>Chain</span>
         <span>:</span>
         <span>Solana</span>
     </div>
