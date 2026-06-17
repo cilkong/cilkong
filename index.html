@@ -345,31 +345,18 @@ grid-template-columns:1fr;
 
 nav{
     display:none;
-    position:absolute;
-    top:90px;
-    left:5%;
-    width:90%;
-    background:#07101f;
-    border:1px solid #1b2a44;
-    border-radius:15px;
-    flex-direction:column;
-    padding:20px;
-    gap:20px;
-    z-index:1000;
 }
-
 nav.active{
     display:flex;
 }
 
 header{
-    position:relative;
-    justify-content:space-between;
+    justify-content:center;
 }
 
+
 .logo{
-    flex:1;
-    justify-content:center;
+    flex:none;
 }
 
 .menu-toggle{
@@ -378,8 +365,7 @@ header{
 }
 
 .telegram-btn{
-    padding:10px 15px;
-    font-size:12px;
+    display:none;
 }
 .hero h1{
 font-size:48px;
@@ -449,10 +435,6 @@ footer{
 <div class="container">
 
 <header>
-
-<div class="menu-toggle" id="menuToggle" onclick="toggleMenu()">
-☰
-</div>
 
 <div class="logo">
     <img src="astronaut.png">
