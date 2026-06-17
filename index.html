@@ -36,11 +36,11 @@ color:white;
 }
 
 .container{
-width:90%;
-max-width:1400px;
-margin:auto;
+    width:90%;
+    max-width:1400px;
+    min-width:1200px;
+    margin:auto;
 }
-
 header{
 display:flex;
 justify-content:space-between;
@@ -91,7 +91,7 @@ font-weight:bold;
     display:grid;
     grid-template-columns:1fr 1fr;
     align-items:center;
-    gap:50px;
+    gap:20px;
     min-height:calc(100vh - 100px);
 }
 
@@ -150,8 +150,8 @@ color:black;
 }
 .faq-mini{
     position:absolute;
-   right:-200px;
-    bottom:-120px;
+   right:-80px;
+    bottom:-80px;
 
     background:rgba(10,20,40,.85);
     backdrop-filter:blur(10px);
@@ -278,15 +278,15 @@ footer{
 
 .coin-container{
     position:absolute;
-    left:40%;
+    left:50%;
     top:30%;
     transform:translate(-50%,-50%);
 }
 
 .coin{
     position:relative;
-    width:430px;
-    height:430px;
+    width:350px;
+    height:350px;
     transform-style:preserve-3d;
     transform-origin:50% 50%;
     animation:spinCoin 8s linear infinite;
