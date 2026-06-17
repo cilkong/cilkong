@@ -240,16 +240,16 @@ border-bottom:1px solid #222;
     display:inline-block;
     background:rgba(0,0,0,.3);
     border:1px solid rgba(255,255,255,.1);
-    padding:12px 16px;
+    padding:12px 18px;
     border-radius:12px;
     color:#ffd52e;
-    line-height:1.8;
 }
 
 .token-info div{
-    display:flex;
-    align-items:center;
-    gap:8px;
+    display:grid;
+    grid-template-columns:80px 15px 1fr;
+    gap:5px;
+    margin:6px 0;
 }
 .community{
 display:flex;
@@ -504,10 +504,18 @@ Built for fun, community and good vibes only.
 </div>
 
 <div class="token-info">
-    <div>🚀 Supply: 980,000,000 $CLK</div>
-    <div>⛓ Chain: Solana</div>
+    <div>
+        <span>🚀 Supply</span>
+        <span>:</span>
+        <span>980,000,000 $CLK</span>
+    </div>
+
+    <div>
+        <span>⛓ Chain</span>
+        <span>:</span>
+        <span>Solana</span>
+    </div>
 </div>
-</div>   
     <div class="hero-image">
 
     <div class="coin-container">
