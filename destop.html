@@ -1,0 +1,568 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>CILKONG</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+}
+
+body{
+background:url('moon-bg.png');
+background-size:cover;
+background-position:center;
+background-attachment:fixed;
+color:white;
+font-family:Arial, sans-serif;
+overflow-x:hidden;
+}
+
+h1,h2,h3{
+font-family:'Press Start 2P', cursive;
+}
+
+a{
+text-decoration:none;
+color:white;
+}
+
+.container{
+width:90%;
+max-width:1400px;
+margin:auto;
+}
+
+header{
+display:flex;
+justify-content:space-between;
+align-items:center;
+padding:25px 0;
+}
+
+.logo{
+display:flex;
+align-items:center;
+gap:15px;
+}
+
+.logo img{
+width:50px;
+}
+
+.logo h2{
+color:#ffd52e;
+font-size:24px;
+}
+
+nav{
+display:flex;
+gap:35px;
+}
+.menu-toggle{
+    display:none;
+    font-size:32px;
+    cursor:pointer;
+    color:#ffd52e;
+    transition:0.3s;
+    user-select:none;
+}
+    nav a{
+font-size:13px;
+}
+
+.telegram-btn{
+background:#ffd52e;
+color:black;
+padding:14px 24px;
+border-radius:10px;
+font-weight:bold;
+}
+
+.hero{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    align-items:center;
+    gap:50px;
+    min-height:calc(100vh - 100px);
+}
+
+.hero > div:first-child{
+    margin-top:-120px;
+}
+
+.hero h1{
+    font-size:56px;
+    margin-bottom:20px;
+    color:#ffd52e;
+}
+
+.hero h3{
+    font-size:18px;
+    line-height:1.8;
+    margin-bottom:25px;
+}
+
+.hero p{
+    font-size:15px;
+    line-height:2;
+    max-width:420px;
+}
+
+.hero-buttons{
+margin-top:40px;
+display:flex;
+gap:20px;
+flex-wrap:wrap;
+}
+    .supply-box{
+margin-top:20px;
+font-size:13px;
+color:#ffd52e;
+}
+
+.btn{
+padding:14px 22px;
+font-size:14px;
+border-radius:12px;
+font-weight:bold;
+border:1px solid #444;
+}
+
+.btn-yellow{
+background:#ffd52e;
+color:black;
+}
+
+.hero-image{
+    position:relative;
+    width:100%;
+    max-width:600px;
+    height:500px;
+}
+.faq-mini{
+    position:absolute;
+   right:-200px;
+    bottom:-120px;
+
+    background:rgba(10,20,40,.85);
+    backdrop-filter:blur(10px);
+
+    border:1px solid rgba(255,255,255,.15);
+    border-radius:20px;
+
+    padding:20px;
+}
+.faq-mini h4{
+color:#ffd52e;
+margin-bottom:10px;
+font-size:14px;
+}
+.hero-image > img{
+    width:100%;
+    max-width:550px;
+}
+
+.section{
+margin-top:80px;
+padding:40px;
+background:#07101f;
+border:1px solid #1b2a44;
+border-radius:20px;
+}
+
+.section-title{
+color:#ffd52e;
+margin-bottom:30px;
+}
+
+.about-grid{
+display:grid;
+grid-template-columns:2fr 1fr 1fr 1fr;
+gap:30px;
+}
+
+.card{
+background:#0c1628;
+padding:25px;
+border-radius:16px;
+}
+
+.nft-grid{
+display:grid;
+grid-template-columns:repeat(3,1fr);
+gap:25px;
+}
+
+.nft-card{
+    background:#0c1628;
+    padding:15px;
+    border-radius:16px;
+    text-align:center;
+}
+.nft-card img{
+width:180px;
+height:180px;
+object-fit:cover;
+display:block;
+margin:0 auto 15px;
+border-radius:10px;
+}
+
+.tokenomics{
+display:grid;
+grid-template-columns:1fr 1fr;
+gap:30px;
+}
+
+.token-box{
+background:#0c1628;
+padding:30px;
+border-radius:16px;
+}
+
+.token-row{
+display:flex;
+justify-content:space-between;
+padding:12px 0;
+border-bottom:1px solid #222;
+}
+.token-info{
+    display:inline-block;
+}
+
+.token-info div{
+    display:grid;
+    grid-template-columns:25px 70px 10px auto;
+    align-items:center;
+    gap:5px;
+    margin:6px 0;
+}
+
+.icon{
+    text-align:center;
+}
+.community{
+display:flex;
+gap:20px;
+flex-wrap:wrap;
+}
+
+.community a{
+background:#0c1628;
+padding:20px 30px;
+border-radius:12px;
+}
+
+.faq-item{
+background:#0c1628;
+padding:20px;
+margin-bottom:15px;
+border-radius:12px;
+}
+
+footer{
+    position:relative;
+    top:-50px;
+    text-align:center;
+    color:#aaa;
+}
+
+.coin-container{
+    position:absolute;
+    left:40%;
+    top:30%;
+    transform:translate(-50%,-50%);
+}
+
+.coin{
+    position:relative;
+    width:430px;
+    height:430px;
+    transform-style:preserve-3d;
+    transform-origin:50% 50%;
+    animation:spinCoin 8s linear infinite;
+}
+
+.coin img{
+    position:absolute;
+    top:0;
+    left:0;
+    width:100%;
+    height:100%;
+    object-fit:contain;
+    transform-origin:50% 50%;
+    backface-visibility:hidden;
+}
+
+.front{
+    transform:rotateY(0deg);
+}
+
+.back{
+    transform:rotateY(180deg);
+}
+
+@keyframes spinCoin{
+    from{
+        transform:rotateY(0deg);
+    }
+    to{
+        transform:rotateY(360deg);
+    }
+}
+
+@media(max-width:900px){
+    
+.hero p{
+margin:auto;
+}
+
+.about-grid{
+grid-template-columns:1fr;
+}
+
+body{
+    background-attachment:scroll;
+    background-size:cover;
+    background-position:right center;
+}
+    
+.nft-grid{
+grid-template-columns:1fr;
+}
+
+.tokenomics{
+grid-template-columns:1fr;
+}
+
+.menu-toggle{
+    display:block;
+}
+
+nav{
+    display:none;
+}
+nav.active{
+    display:flex;
+}
+
+header{
+    justify-content:center;
+}
+
+
+.logo{
+    flex:none;
+}
+
+.menu-toggle{
+    display:block;
+    order:-1;
+}
+
+.telegram-btn{
+    display:none;
+}
+.hero h1{
+font-size:48px;
+}
+.nft-card img{
+    width:140px;
+    height:140px;
+}
+.hero{
+    grid-template-columns:1fr;
+    text-align:center;
+    min-height:auto;
+    gap:30px;
+}
+
+.hero > div:first-child{
+    margin-top:0;
+}
+
+.hero-image{
+    width:100%;
+    height:auto;
+    min-height:450px;
+}
+
+.coin-container{
+    position:relative;
+    left:auto;
+    top:auto;
+    transform:none;
+    display:flex;
+    justify-content:center;
+}
+
+.coin{
+    width:280px;
+    height:280px;
+}
+
+.faq-mini{
+    position:relative;
+    right:auto;
+    bottom:auto;
+    margin:20px auto 0;
+    width:90%;
+    max-width:280px;
+}
+
+.hero-buttons{
+    justify-content:center;
+}
+
+.token-info{
+    margin:20px auto 0;
+    display:inline-block;
+}
+
+.token-info div{
+    display:grid;
+    grid-template-columns:25px 65px 15px auto;
+    align-items:center;
+    gap:4px;
+    text-align:left;
+}
+
+footer{
+    top:0;
+    margin-top:40px;
+}
+}
+
+</style>
+</head>
+<body>
+
+<div class="container">
+
+<header>
+
+<div class="logo">
+    <img src="astronaut.png">
+    <h2>CILKONG</h2>
+</div>
+
+<nav id="mobileMenu">
+    <a href="#about">ABOUT</a>
+    <a href="#nft">NFT COLLECTIONS</a>
+    <a href="#tokenomics">TOKENOMICS</a>
+    <a href="#community">COMMUNITY</a>
+    <a href="#faq">FAQ</a>
+</nav>
+
+<a href="https://t.me/cilkong" target="_blank" class="telegram-btn">
+JOIN TELEGRAM
+  <div style="margin-top:20px">
+    <a href="desktop.html" class="btn">
+        DESKTOP VERSION
+    </a>
+</div>
+</a>
+</header>
+<section class="hero">
+
+<div>
+
+<h1>CILKONG</h1>
+
+<h3>
+Just a monkey.<br>
+No promises.
+</h3>
+
+<p>
+Cilkong is a meme project on Solana.
+Built for fun, community and good vibes only.
+</p>
+
+<div class="hero-buttons">
+
+    <a href="#" class="btn btn-yellow">
+        BUY TOKEN
+    </a>
+
+    <a href="https://t.me/cilkongofficial" target="_blank" class="btn">
+        TELEGRAM
+    </a>
+
+    <a href="https://x.com/cilkongCLK" target="_blank" class="btn">
+        FOLLOW X
+    </a>
+
+</div>
+
+<div class="token-info">
+
+    <div>
+        <span class="icon">🚀</span>
+        <span>Supply</span>
+        <span>:</span>
+        <span>980,000,000 $CLK</span>
+    </div>
+
+    <div>
+        <span class="icon">⛓</span>
+        <span>Chain</span>
+        <span>:</span>
+        <span>Solana</span>
+    </div>
+
+</div>
+
+</div>
+<div class="hero-image">
+
+    <div class="coin-container">
+        <div class="coin">
+            <img src="astronaut1.png" class="front">
+            <img src="astronaut1.png" class="back">
+        </div>
+    </div>
+
+    <div class="faq-mini">
+        <h4>FAQ</h4>
+
+        <p>
+            <b>Will it go to the moon?</b><br>
+            Nobody knows.
+        </p>
+
+        <p>
+            <b>Is there a roadmap?</b><br>
+            Not really.
+        </p>
+
+        <p>
+            <b>Will there be games?</b><br>
+            Maybe.
+        </p>
+    </div>
+
+</div>
+
+</section>
+
+<footer>
+
+Started as a meme.
+Everything else is a bonus.
+
+</footer>
+
+</div>
+
+</body>
+</html>
