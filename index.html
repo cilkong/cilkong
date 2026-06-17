@@ -90,13 +90,14 @@ font-weight:bold;
 .hero{
 display:grid;
 grid-template-columns:1fr 1fr;
-align-items:center;
+    align-items:start;
+    padding-top:80px;
 height:calc(100vh - 100px);
 gap:50px;
 }
 
 .hero h1{
-font-size:56px;
+    font-size:48px;
 line-height:1.1;
 color:#ffd52e;
 margin-bottom:30px;
@@ -149,14 +150,16 @@ color:black;
 }
 .faq-mini{
     position:absolute;
-    right:0;
-bottom:0;
-    width:230px;
 
-    background:rgba(10,20,40,.8);
+    right:-80px;
+    bottom:40px;
+
+    width:240px;
+
+    background:rgba(10,20,40,.85);
     backdrop-filter:blur(10px);
 
-    border:1px solid rgba(255,255,255,.1);
+    border:1px solid rgba(255,255,255,.15);
     border-radius:20px;
 
     padding:20px;
@@ -298,10 +301,10 @@ color:#aaa;
 
 @keyframes spinCoin{
     from{
-        transform:rotate(0deg);
+        transform:rotateY(0deg);
     }
     to{
-        transform:rotate(360deg);
+        transform:rotateY(360deg);
     }
 }
 
@@ -468,15 +471,35 @@ Built for fun, community and good vibes only.
     </div>
 
 </section>
-    <div class="faq-mini">
+ <div class="hero-image">
+
+    <div class="coin-container">
+        <div class="coin">
+            <img src="astronaut1.png" class="front">
+            <img src="astronaut1.png" class="back">
         </div>
     </div>
+
+    <div class="faq-mini">
         <h4>FAQ</h4>
-        <p><b>Will it go to the moon?</b><br>Nobody knows.</p>
-        <p><b>Is there a roadmap?</b><br>Not really.</p>
-        <p><b>Will there be games?</b><br>Maybe.</p>
+
+        <p>
+            <b>Will it go to the moon?</b><br>
+            Nobody knows.
+        </p>
+
+        <p>
+            <b>Is there a roadmap?</b><br>
+            Not really.
+        </p>
+
+        <p>
+            <b>Will there be games?</b><br>
+            Maybe.
+        </p>
     </div>
 
+</div>
 
 </section>
 
