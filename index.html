@@ -90,14 +90,14 @@ font-weight:bold;
 .hero{
 display:grid;
 grid-template-columns:1fr 1fr;
-    align-items:start;
-    padding-top:80px;
+    align-items:center;
+    padding-top:20px;
 height:calc(100vh - 100px);
 gap:50px;
 }
 
 .hero h1{
-    font-size:48px;
+    font-size:42px;
 line-height:1.1;
 color:#ffd52e;
 margin-bottom:30px;
@@ -143,17 +143,14 @@ color:black;
 
 .hero-image{
     position:relative;
-    display:flex;
-    justify-content:center;
-    align-items:center;
-    min-height:500px;
+    width:600px;
+    height:500px;
+    margin:auto;
 }
 .faq-mini{
     position:absolute;
-
-    right:-80px;
-    bottom:40px;
-
+    right:-40px;
+    bottom:20px;
     width:240px;
 
     background:rgba(10,20,40,.85);
@@ -266,9 +263,10 @@ color:#aaa;
 }
 
 .coin-container{
-    perspective:1000px;
-    display:flex;
-    justify-content:center;
+    position:absolute;
+    left:50%;
+    top:50%;
+    transform:translate(-50%,-50%);
 }
 
 .coin{
@@ -461,14 +459,6 @@ Built for fun, community and good vibes only.
 </div>
 
    <div class="hero-image">
-
-    <div class="coin-container">
-        <div class="coin">
-            <img src="astronaut1.png" class="front">
-            <img src="astronaut1.png" class="back">
-        </div>
-    </div>
-
 
     <div class="coin-container">
         <div class="coin">
