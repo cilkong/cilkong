@@ -142,18 +142,20 @@ color:black;
 
 .hero-image{
     position:relative;
-    height:600px;
+    display:flex;
+    justify-content:center;
+    align-items:center;
 }
 
 .faq-mini{
-    position:fixed;
-    right:40px;
+    position:absolute;
+    right:-30px;
     bottom:40px;
-        
-    width:240px;
 
-    background:rgba(10,20,40,.85);
-    backdrop-filter:blur(8px);
+    width:230px;
+
+    background:rgba(10,20,40,.8);
+    backdrop-filter:blur(10px);
 
     border:1px solid rgba(255,255,255,.1);
     border-radius:20px;
@@ -269,8 +271,9 @@ color:#aaa;
 
 .coin{
     position:relative;
-    width:550px;
-    height:550px;
+    .coin{
+    width:430px;
+    height:430px;
     transform-style:preserve-3d;
     transform-origin:50% 50%;
     animation:spinCoin 8s linear infinite;
@@ -436,27 +439,23 @@ Built for fun, community and good vibes only.
 </p>
 
 <div class="hero-buttons">
-    ...
+
+    <a href="#" class="btn btn-yellow">
+        BUY TOKEN
+    </a>
+
+    <a href="https://t.me/cilkongofficial" target="_blank" class="btn">
+        TELEGRAM
+    </a>
+
+    <a href="https://x.com/cilkongCLK" target="_blank" class="btn">
+        FOLLOW X
+    </a>
+
 </div>
 
 <div class="supply-box">
-    Supply: 980,000,000 $CLK
-</div>
-
-<a href="#" class="btn btn-yellow">
-BUY TOKEN
-</a>
-
-<a href="https://t.me/cilkongofficial" target="_blank" class="btn">
-TELEGRAM
-</a>
-
-<a href="https://x.com/cilkongCLK" target="_blank" class="btn">
-FOLLOW X
-</a>
-
-</div>
-
+    🚀 Supply: 980,000,000 $CLK
 </div>
 
 <div class="hero-image">
@@ -466,7 +465,7 @@ FOLLOW X
             <img src="astronaut1.png" class="front">
             <img src="astronaut1.png" class="back">
         </div>
-    </div>
+    
 
     <div class="faq-mini">
         <h4>FAQ</h4>
@@ -474,10 +473,6 @@ FOLLOW X
         <p><b>Is there a roadmap?</b><br>Not really.</p>
         <p><b>Will there be games?</b><br>Maybe.</p>
     </div>
-
-</div>
-
-</section>
 
 
 </section>
