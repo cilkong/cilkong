@@ -318,125 +318,70 @@ footer{
     to{
         transform:rotateY(360deg);
     }
-}
-    
-.hero p{
-margin:auto;
-}
-
-.about-grid{
-grid-template-columns:1fr;
-}
-
-body{
-    background-attachment:scroll;
-    background-size:cover;
-    background-position:right center;
-}
-    
-.nft-grid{
-grid-template-columns:1fr;
-}
-
-.tokenomics{
-grid-template-columns:1fr;
-}
-
-.menu-toggle{
-    display:block;
-}
-
-nav{
-    display:none;
-}
-nav.active{
-    display:flex;
-}
-
-header{
-    justify-content:center;
-}
-
-
-.logo{
-    flex:none;
-}
-
-.menu-toggle{
-    display:block;
-    order:-1;
-}
-
-.telegram-btn{
-    display:none;
-}
-.hero h1{
-font-size:48px;
-}
-.nft-card img{
-    width:140px;
-    height:140px;
-}
-.hero{
-    grid-template-columns:1fr;
-    text-align:center;
-    min-height:auto;
-    gap:30px;
+    .hero{
+    grid-template-columns:1fr 1fr;
+    gap:20px;
+    min-height:100vh;
 }
 
 .hero > div:first-child{
-    margin-top:0;
+    margin-top:-40px;
 }
 
-.hero-image{
-    width:100%;
-    height:auto;
-    min-height:450px;
+.hero h1{
+    font-size:36px;
 }
 
-.coin-container{
-    position:relative;
-    left:auto;
-    top:auto;
-    transform:none;
-    display:flex;
-    justify-content:center;
+.hero h3{
+    font-size:14px;
+}
+
+.hero p{
+    font-size:12px;
+    line-height:1.7;
 }
 
 .coin{
-    width:280px;
-    height:280px;
+    width:240px;
+    height:240px;
+}
+
+.coin-container{
+    left:50%;
+    top:35%;
 }
 
 .faq-mini{
-    position:relative;
-    right:auto;
-    bottom:auto;
-    margin:20px auto 0;
-    width:90%;
-    max-width:280px;
+    right:-40px;
+    bottom:-40px;
+    transform:scale(.85);
 }
 
-.hero-buttons{
-    justify-content:center;
+.logo h2{
+    font-size:18px;
 }
 
-.token-info{
-    margin:20px auto 0;
-    display:inline-block;
+.logo img{
+    width:35px;
 }
 
-.token-info div{
-    display:grid;
-    grid-template-columns:25px 65px 15px auto;
-    align-items:center;
-    gap:4px;
-    text-align:left;
+nav{
+    gap:15px;
 }
 
-footer{
-    top:0;
-    margin-top:40px;
+nav a{
+    font-size:10px;
+}
+
+.telegram-btn{
+    padding:10px 14px;
+    font-size:12px;
+}
+
+.btn{
+    padding:10px 14px;
+    font-size:12px;
+}
 }
 }
 
