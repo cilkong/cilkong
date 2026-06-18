@@ -258,7 +258,94 @@ transform:translateX(-50%);
 font-size:24px;
 color:white;
 }
-    </style>
+.about-floating{
+
+position:absolute;
+
+top:-70px;
+left:50%;
+
+transform:translateX(-50%);
+
+background:#ffd233;
+
+color:#000;
+
+padding:15px 20px;
+
+border-radius:15px;
+
+font-family:'Press Start 2P', cursive;
+
+font-size:10px;
+
+text-decoration:none;
+
+white-space:nowrap;
+
+box-shadow:0 0 20px rgba(255,210,51,.5);
+}
+.dialog-box{
+
+position:absolute;
+
+left:1320px;
+top:280px;
+
+width:400px;
+height:250px;
+
+padding:25px;
+
+background:rgba(0,0,0,.8);
+
+border:3px solid #ffd233;
+
+border-radius:20px;
+
+display:none;
+
+color:white;
+}
+    .dialog-box h3{
+
+color:#ffd233;
+
+margin-bottom:20px;
+
+font-size:16px;
+}
+    #dialogText{
+
+font-size:14px;
+
+line-height:1.8;
+}    
+.next-btn{
+
+position:absolute;
+
+bottom:15px;
+right:20px;
+
+font-size:25px;
+
+cursor:pointer;
+
+color:#ffd233;
+
+animation:blink 1s infinite;
+}
+
+@keyframes blink{
+
+50%{
+opacity:0.3;
+}
+
+}
+    
+</style>
 </head>
 <body>
 
@@ -329,7 +416,23 @@ FOLLOW X
 
 <div class="center">
 
+<a href="#" class="about-floating" onclick="showAbout(event)">
+ABOUT CILKONG
+</a>
+
 <img src="astronaut1.png">
+
+</div>
+
+<div id="aboutBox" class="dialog-box">
+
+<h3>WHO IS CILKONG?</h3>
+
+<p id="dialogText"></p>
+
+<div id="nextBtn" class="next-btn" onclick="nextPage()">
+▼
+</div>
 
 </div>
 
@@ -361,6 +464,54 @@ Started as a meme. Everything else is a bonus.
 </div>
 
 </div>
+<script>
 
+const pages = [
+
+`Cilkong is a legendary monkey from outer space who arrived on the Solana blockchain searching for adventure and memes.`,
+
+`Unlike ordinary projects, Cilkong focuses on community, creativity and having fun together across the galaxy.`,
+
+`No fake promises. No impossible roadmap. Just good vibes, strong community and moon missions.`,
+
+`The journey has only just begun. Join Cilkong as he explores the universe one meme at a time.`
+
+];
+
+let currentPage = 0;
+
+function showAbout(e){
+
+e.preventDefault();
+
+document.getElementById("aboutBox").style.display =
+"block";
+
+currentPage = 0;
+
+document.getElementById("dialogText").innerHTML =
+pages[currentPage];
+
+}
+
+function nextPage(){
+
+currentPage++;
+
+if(currentPage < pages.length){
+
+document.getElementById("dialogText").innerHTML =
+pages[currentPage];
+
+}else{
+
+document.getElementById("aboutBox").style.display =
+"none";
+
+}
+
+}
+
+</script>
 </body>
 </html>
