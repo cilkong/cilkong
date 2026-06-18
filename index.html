@@ -488,8 +488,19 @@ function showAbout(e){
 
 e.preventDefault();
 
-document.getElementById("aboutBox").style.display =
-"block";
+const box = document.getElementById("aboutBox");
+
+/* kalau box sudah terbuka -> tutup */
+if(box.style.display === "block"){
+
+box.style.display = "none";
+
+return;
+
+}
+
+/* kalau box tertutup -> buka */
+box.style.display = "block";
 
 currentPage = 0;
 
@@ -511,6 +522,8 @@ pages[currentPage];
 
 document.getElementById("aboutBox").style.display =
 "none";
+
+currentPage = 0;
 
 }
 
