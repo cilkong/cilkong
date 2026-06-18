@@ -35,22 +35,7 @@ background-size:cover;
 background-position:center;
 overflow:hidden;
 }
-    
-body{
-margin:0;
-background:#000;
-overflow:hidden;
-}
 
-#sceneWrapper{
-width:100vw;
-height:100vh;
-overflow:hidden;
-display:flex;
-justify-content:center;
-align-items:flex-start;
-}
-    
 header{
 
 position:absolute;
@@ -367,7 +352,7 @@ opacity:0.3;
 </style>
 </head>
 <body>
-<div id="sceneWrapper">
+
 <div class="scene">
 
 <header>
@@ -475,15 +460,13 @@ ABOUT CILKONG
 </div>
 
 </div>
-    
 
 </section>
 
 <div class="footer-text">
 Started as a meme. Everything else is a bonus.
 </div>
-    
-</div>
+
 </div>
 <script>
 
@@ -545,34 +528,6 @@ currentPage = 0;
 }
 
 }
-<script>
-    
-<script>
-    
-function scaleScene(){
-
-const scene = document.querySelector(".scene");
-
-const isMobile = window.innerWidth <= 768;
-
-if(isMobile){
-    scene.style.transform = "none";
-    return;
-}
-
-const scaleX = window.innerWidth / 1920;
-const scaleY = window.innerHeight / 1080;
-
-const scale = Math.min(scaleX, scaleY);
-
-scene.style.transform = `scale(${scale})`;
-scene.style.transformOrigin = "top center";
-
-}
-
-window.addEventListener("resize", scaleScene);
-
-scaleScene();
 
 </script>
 </body>
