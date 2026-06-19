@@ -187,7 +187,22 @@ width:320px;
 
 animation:float 4s ease-in-out infinite;
 }
+body{
+margin:0;
+overflow:hidden;
+background:#000;
+}
 
+#sceneWrapper{
+width:100vw;
+height:100vh;
+
+display:flex;
+justify-content:center;
+align-items:center;
+
+overflow:hidden;
+}
 @keyframes float{
 
 0%,100%{
@@ -352,7 +367,8 @@ opacity:0.3;
 </style>
 </head>
 <body>
-
+    
+<div id="sceneWrapper">
 <div class="scene">
 
 <header>
@@ -530,6 +546,27 @@ currentPage = 0;
 }
 
 }
+<script>
+
+function scaleScene(){
+
+const scene = document.querySelector(".scene");
+
+const scaleX = window.innerWidth / 1920;
+const scaleY = window.innerHeight / 1080;
+
+const scale = Math.min(scaleX, scaleY);
+
+scene.style.transform = `scale(${scale})`;
+scene.style.transformOrigin = "center center";
+
+}
+
+window.addEventListener("resize", scaleScene);
+
+scaleScene();
+
+</script>
 
 </script>
 </body>
