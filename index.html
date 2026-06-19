@@ -387,8 +387,6 @@ opacity:0.3;
 <span>CILKONG</span>
 
 </div>
-    
-</div>
   
 <nav></nav>
 
@@ -517,7 +515,6 @@ e.preventDefault();
 
 const box = document.getElementById("aboutBox");
 
-/* kalau box sudah terbuka -> tutup */
 if(box.style.display === "block"){
 
 box.style.display = "none";
@@ -526,7 +523,6 @@ return;
 
 }
 
-/* kalau box tertutup -> buka */
 box.style.display = "block";
 
 currentPage = 0;
@@ -536,7 +532,25 @@ pages[currentPage];
 
 }
 
-<script>
+function nextPage(){
+
+currentPage++;
+
+if(currentPage < pages.length){
+
+document.getElementById("dialogText").innerHTML =
+pages[currentPage];
+
+}else{
+
+document.getElementById("aboutBox").style.display =
+"none";
+
+currentPage = 0;
+
+}
+
+}
 
 function scaleScene(){
 
@@ -557,7 +571,6 @@ window.addEventListener("resize", scaleScene);
 scaleScene();
 
 </script>
-
 </script>
 </body>
 </html>
