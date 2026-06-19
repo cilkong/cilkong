@@ -15,7 +15,13 @@ padding:0;
 box-sizing:border-box;
 }
 
-body{
+.html{
+overflow-x:auto;
+}
+
+.body{
+margin:0;
+background:#000;
 overflow-x:auto;
 overflow-y:auto;
 }
@@ -364,6 +370,7 @@ opacity:0.3;
 }
 @media (max-width:768px){
 
+
 .scene{
 width:100%;
 min-width:100%;
@@ -677,32 +684,6 @@ currentPage = 0;
 
 }
 
-function scaleScene(){
-
-const scene = document.querySelector(".scene");
-
-if(window.innerWidth <= 1200){
-    
-scene.style.transform = "none";
-scene.style.width = "1920px";
-
-return;
-
-}
-
-const scaleX = window.innerWidth / 1920;
-const scaleY = window.innerHeight / 1080;
-
-const scale = Math.min(scaleX, scaleY);
-
-scene.style.transform = `scale(${scale})`;
-scene.style.transformOrigin = "top left";
-
-}
-
-window.addEventListener("resize", scaleScene);
-
-scaleScene();
 
 </script>
 </body>
