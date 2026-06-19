@@ -367,13 +367,12 @@ opacity:0.3;
 @media (max-width:768px){
 
 .scene{
-width:100vw;
-min-width:100vw;
+width:100%;
+min-width:100%;
 height:auto;
 min-height:100vh;
 overflow:visible;
 }
-
 .hero{
 
 position:relative;
@@ -676,18 +675,10 @@ scene.style.transform = `scale(${scale})`;
 scene.style.transformOrigin = "center center";
 
 }
-const scaleY = window.innerHeight / 1080;
-
-const scale = Math.min(scaleX, scaleY);
-
-scene.style.transform = `scale(${scale})`;
-scene.style.transformOrigin = "center center";
-}
 
 window.addEventListener("resize", scaleScene);
 
 scaleScene();
-
 
 </script>
 </body>
