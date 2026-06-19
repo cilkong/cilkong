@@ -381,7 +381,10 @@ overflow:visible;
 }
 
 .hero{
-position:relative;
+flex-direction:column;
+align-items:center;
+text-align:center;
+}
 
 top:120px;
 left:0;
@@ -417,13 +420,15 @@ flex-wrap:wrap;
 
 .center{
 position:relative;
-
+left:0;
+top:40px;
+}
 left:0;
 top:50px;
 }
 
 .center img{
-width:280px;
+width:300px;
 }
 
 .about-floating{
@@ -432,15 +437,11 @@ top:-60px;
 
 .faq{
 position:relative;
-
-right:auto;
-top:80px;
-
+top:60px;
 width:90%;
-
 margin:auto;
 }
-
+    
 .dialog-box{
 left:50%;
 top:20px;
@@ -665,6 +666,16 @@ function scaleScene(){
 
 const scene = document.querySelector(".scene");
 
+if(window.innerWidth <= 768){
+
+scene.style.transform = "none";
+scene.style.width = "100vw";
+scene.style.minWidth = "100vw";
+
+return;
+
+}
+
 const scaleX = window.innerWidth / 1920;
 const scaleY = window.innerHeight / 1080;
 
@@ -672,7 +683,6 @@ const scale = Math.min(scaleX, scaleY);
 
 scene.style.transform = `scale(${scale})`;
 scene.style.transformOrigin = "center center";
-
 }
 
 window.addEventListener("resize", scaleScene);
