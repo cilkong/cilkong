@@ -203,6 +203,10 @@ align-items:center;
 
 overflow:hidden;
 }
+    .about-floating{
+z-index:9999;
+cursor:pointer;
+}
 @keyframes float{
 
 0%,100%{
@@ -380,7 +384,9 @@ opacity:0.3;
 <span>CILKONG</span>
 
 </div>
-
+    
+</div>
+  
 <nav></nav>
 
 </header>
@@ -527,25 +533,6 @@ pages[currentPage];
 
 }
 
-function nextPage(){
-
-currentPage++;
-
-if(currentPage < pages.length){
-
-document.getElementById("dialogText").innerHTML =
-pages[currentPage];
-
-}else{
-
-document.getElementById("aboutBox").style.display =
-"none";
-
-currentPage = 0;
-
-}
-
-}
 <script>
 
 function scaleScene(){
