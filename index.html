@@ -373,43 +373,75 @@ opacity:0.3;
 @media (max-width:768px){
 
 .scene{
-min-width:1920px;
+width:100vw;
+min-width:100vw;
+height:auto;
+min-height:100vh;
+overflow:visible;
 }
 
-.left h1{
-font-size:60px;
+.hero{
+position:relative;
+
+top:120px;
+left:0;
+right:0;
+
+display:flex;
+flex-direction:column;
+align-items:center;
+
+text-align:center;
 }
 
-.left h2{
-font-size:28px;
-}
-
-.left p{
-font-size:22px;
-}
-
-.buttons a{
-font-size:18px;
-padding:18px 30px;
-}
-
-.center img{
-width:450px;
-}
-
-.faq{
-width:500px;
-}
-
-right:auto;
-top:100px;
-
-margin:auto;
+.left{
 width:90%;
 }
 
-.dialog-box{
+.left h1{
+font-size:50px;
+}
 
+.left h2{
+font-size:24px;
+}
+
+.left p{
+font-size:18px;
+}
+
+.buttons{
+justify-content:center;
+flex-wrap:wrap;
+}
+
+.center{
+position:relative;
+
+left:0;
+top:50px;
+}
+
+.center img{
+width:280px;
+}
+
+.about-floating{
+top:-60px;
+}
+
+.faq{
+position:relative;
+
+right:auto;
+top:80px;
+
+width:90%;
+
+margin:auto;
+}
+
+.dialog-box{
 left:50%;
 top:20px;
 
@@ -420,8 +452,14 @@ height:auto;
 }
 
 .footer-text{
+position:relative;
 
-width:90%;
+left:auto;
+bottom:auto;
+
+transform:none;
+
+margin-top:150px;
 
 text-align:center;
 
@@ -429,10 +467,15 @@ font-size:14px;
 }
 
 .logo{
+position:relative;
 
 left:0;
 top:0;
 
+justify-content:center;
+}
+
+header{
 justify-content:center;
 }
 
