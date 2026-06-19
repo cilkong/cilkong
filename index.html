@@ -28,6 +28,7 @@ width:1920px;
 height:1080px;
 min-width:1920px;
 position:relative;
+transform-origin:top left;
 
 background:url("bg-space.png");
 background-size:cover;
@@ -194,9 +195,8 @@ animation:float 4s ease-in-out infinite;
 width:100%;
 min-height:100vh;
 
-display:flex;
-justify-content:center;
-align-items:flex-start;
+display:block;
+overflow:auto;
 }
     .about-floating{
 z-index:9999;
@@ -681,10 +681,10 @@ function scaleScene(){
 
 const scene = document.querySelector(".scene");
 
-if(window.innerWidth <= 768){
-
+if(window.innerWidth <= 1200){
+    
 scene.style.transform = "none";
-scene.style.width = "100vw";
+scene.style.width = "1920px";
 scene.style.minWidth = "100vw";
 scene.style.height = "auto";
 
@@ -698,7 +698,7 @@ const scaleY = window.innerHeight / 1080;
 const scale = Math.min(scaleX, scaleY);
 
 scene.style.transform = `scale(${scale})`;
-scene.style.transformOrigin = "auto";
+scene.style.transformOrigin = "top left";
 
 }
 
