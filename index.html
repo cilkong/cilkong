@@ -370,9 +370,11 @@ opacity:0.3;
 width:100vw;
 min-width:100vw;
 height:auto;
-min-height:100vh;.
-    
-hero{
+min-height:100vh;
+overflow:visible;
+}
+
+.hero{
 
 position:relative;
 
@@ -659,12 +661,21 @@ if(window.innerWidth <= 768){
 scene.style.transform = "none";
 scene.style.width = "100vw";
 scene.style.minWidth = "100vw";
+scene.style.height = "auto";
 
 return;
 
 }
 
 const scaleX = window.innerWidth / 1920;
+const scaleY = window.innerHeight / 1080;
+
+const scale = Math.min(scaleX, scaleY);
+
+scene.style.transform = `scale(${scale})`;
+scene.style.transformOrigin = "center center";
+
+}
 const scaleY = window.innerHeight / 1080;
 
 const scale = Math.min(scaleX, scaleY);
