@@ -408,10 +408,11 @@ padding:10px 0;
 }
 .faq{
 position:relative;
-top:60px;
 width:90%;
-margin:auto;
-left:-4px;
+margin:40px auto 0;
+left:auto;
+right:auto;
+top:auto;
 }
 .hero{
 
@@ -481,10 +482,14 @@ left:auto;
 bottom:auto;
 transform:none;
 
-margin-top:40px;
-padding-bottom:30px;
+display:block;
+width:100%;
+
+margin-top:50px;
+padding-bottom:40px;
 
 text-align:center;
+font-size:12px;
 }
 
 .logo{
@@ -508,11 +513,8 @@ justify-content:center;
 @media (pointer:coarse){
 
 .scene{
-width:100%;
-min-width:100%;
-height:auto;
 min-height:100vh;
-overflow:visible;
+height:auto;
 }
 .hero{
 flex:1;
@@ -524,7 +526,27 @@ bottom:25px;
 left:50%;
 transform:translateX(-50%);
 }
+.faq{
+position:relative;
+top:auto;
+left:auto;
+right:auto;
+margin:40px auto 60px;
+width:90%;
+}
 
+.footer-text{
+position:relative;
+left:auto;
+bottom:auto;
+transform:none;
+
+margin-top:20px;
+padding-bottom:40px;
+
+text-align:center;
+font-size:12px;
+}
 }
 </style>
 </head>
